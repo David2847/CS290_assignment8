@@ -6,7 +6,6 @@ import OrderPage from './pages/OrderPage'
 import RegistrationPage from './pages/RegistrationPage'
 import items from './data/items';
 
-
 function App() {
   return (
     <div className="app">
@@ -14,8 +13,8 @@ function App() {
         <Navigation />
         <Routes>
           <Route path="/" element={<HomePage />}></Route>
-          <Route path="/about" element={ <OrderPage />}></Route>
-          <Route path="/contact" element={ <RegistrationPage />}></Route>
+          <Route path="/order" element={ <OrderPage items={items}/>}></Route>
+          <Route path="/registration" element={ <RegistrationPage />}></Route>
          </Routes>
       </Router>
     </div>
