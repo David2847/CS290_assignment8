@@ -1,23 +1,25 @@
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import './App.css';
+import Navigation from './components/Navigation';
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import HomePage from './pages/HomePage'
+import OrderPage from './pages/OrderPage'
+import RegistrationPage from './pages/RegistrationPage'
 import items from './data/items';
 
-function App() {
 
+function App() {
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-    </>
-  )
+    <div className="app">
+      <Router>
+        <Navigation />
+        <Routes>
+          <Route path="/" element={<HomePage />}></Route>
+          <Route path="/about" element={ <OrderPage />}></Route>
+          <Route path="/contact" element={ <RegistrationPage />}></Route>
+         </Routes>
+      </Router>
+    </div>
+  );
 }
 
-export default App
+export default App;
